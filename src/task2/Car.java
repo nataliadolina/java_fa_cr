@@ -2,12 +2,12 @@ package task2;
 
 public abstract class Car {
     protected String name;
-    private String _color;
-    private int maxSpeed;
-    private String type;
-    private int currentSpeed;
-    private float price;
-    public Car(String color, int maxSpeedd, String typee, int currentSpeedd, float pricee){
+    protected String _color;
+    protected int maxSpeed;
+    protected String type;
+    protected int currentSpeed;
+    protected  float price;
+    protected Car(String color, int maxSpeedd, String typee, int currentSpeedd, float pricee){
         _color = color;
         maxSpeed = maxSpeedd;
         type = typee;
@@ -25,4 +25,11 @@ public abstract class Car {
         System.out.println("Stopped" + name + "Current speed: " + 0);
     }
 
+    public void Accelerate(int speed){
+        currentSpeed+= speed;
+        if (currentSpeed > maxSpeed){
+            currentSpeed = maxSpeed;
+        }
+        System.out.println("Accelerated" + name + "Current speed: " + currentSpeed);
+    }
 }
